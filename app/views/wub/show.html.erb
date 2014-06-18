@@ -1,0 +1,61 @@
+<%= link_to '&laquo; Back to wubs'.html_safe, wublist_path %>
+<h1 id="wubname"><%= @wub.name %></h1>
+
+<div class="controls">
+  <button id="play">Play</button>
+      
+  Beats per bar:
+  <select id="beatsperbar">
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+  </select>
+      
+  Bars:
+  <select id="numbars">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+      
+  BPM:
+  <select id="bpm">
+    <option>60</option>
+    <option>80</option>
+    <option>100</option>
+    <option>120</option>
+    <option>140</option>
+    <option>180</option>
+    <option>200</option>
+    <option>240</option>
+    <option>280</option>
+  </select>
+</div>
+    
+    
+<div id="tracker"></div>
+    
+<ul id="tracks"></ul>
+<p><a id="new-track" href="<%= add_track_path(@wub) %>">Add Track</a></p>
+    
+<script>
+$(function(){
+    wubmachine.load_wub(<%= @wub.id %>);
+});
+</script>
+    
+<h6>Helpful links:</h6>
+<p><a target="_blank" href="http://www.html5rocks.com/en/tutorials/webaudio/intro/">http://www.html5rocks.com/en/tutorials/webaudio/intro/</a></p>
+<p><a target="_blank" href="http://blog.teamtreehouse.com/building-a-synthesizer-with-the-web-audio-api">http://blog.teamtreehouse.com/building-a-synthesizer-with-the-web-audio-api</a></p>
+<p><a target="_blank" href="http://webcache.googleusercontent.com/search?q=cache:z61Zyg6KmcYJ:https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html+&cd=1&hl=en&ct=clnk&gl=uk&client=firefox-a">http://webcache.googleusercontent.com/search?q=cache:z61Zyg6KmcYJ:https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html+&cd=1&hl=en&ct=clnk&gl=uk&client=firefox-a</a></p>
+<h5>To to</h5>
+<ul>
+  <li>UI for adding tracks</li>
+  <li>UI for altering frequency on each beat</li>
+  <li>Ensure overlapping notes play OK</li>
+  <li>Track gain (new node &amp; ui)</li>
+  <li>Server side back-end</li>
+</ul>

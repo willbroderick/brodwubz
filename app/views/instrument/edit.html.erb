@@ -1,0 +1,38 @@
+<% if !@errors.nil? and @errors.any? %>
+  <ul class="errors">
+    <% @errors.full_messages.each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @instrument do |f| %>
+<div>
+  <div>
+    <label>Name</label>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <label>Waveform:</label>
+    <%= f.select(:instrument_type, ['sine', 'square', 'sawtooth', 'triangle']) %>
+  </div>
+
+  <div>
+    <label>Frequency</label>
+    <%= f.text_field :frequency %>
+  </div>
+
+  <div>
+    <label>Envelope node count</label>
+    <%= text_field_tag :env_node_count, 4 %>
+  </div>
+
+  <p>Times are in seconds. Gain is from 0-1.</p>
+  <div id="envelope_nodes"></div>
+</div>
+
+<div>
+  <%= f.submit 'Save' %>
+</div>
+<% end %>

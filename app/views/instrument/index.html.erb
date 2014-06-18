@@ -1,0 +1,9 @@
+<h1>Your instruments</h1>
+
+<ul>
+  <% @instruments.each do |i| %>
+    <li><%= i.name %> | <%= link_to "Edit", edit_instrument_path(i) %> | <%= link_to "Delete", delete_instrument_path(i) %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'My wubs', wublist_path %></p>

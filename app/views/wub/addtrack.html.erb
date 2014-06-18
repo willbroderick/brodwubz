@@ -1,0 +1,17 @@
+<h1>Back to <%= link_to @wub.name, wub_path(@wub) %></h1>
+
+<%= form_tag do %>
+<div>
+  <label>Use existing instrument:</label>
+  <select name="existing_instrument">
+    <% @instruments.each do |i| %>
+      <option value="<%= i.id %>"><%= i.name %></option>
+    <% end %>
+  </select>
+  <input name="existing" type="submit" value="Use"/>
+</div>
+
+<div>
+  Or <input name="new" type="submit" value="create a new one"/>.
+</div>
+<% end %>

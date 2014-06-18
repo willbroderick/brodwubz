@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  owner_id: 1
+  num_beats_per_bar: 1
+  num_bars: 1
+  bpm: 1
+
+two:
+  name: MyString
+  owner_id: 1
+  num_beats_per_bar: 1
+  num_bars: 1
+  bpm: 1

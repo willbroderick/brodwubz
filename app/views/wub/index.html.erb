@@ -1,0 +1,17 @@
+<h1>These are your wubs:</h1>
+
+<% if @wubs.count == 0 %>
+  <p>Hold on m8... You have no wubs. What even the fuck are you?</p>
+  <p>Get somebody to invite you to their hot wet shit, or <%= link_to 'make one of your own', create_wub_path %>.</p>
+<% else %>
+  <ul>
+    <% @wubs.each do |wub| %>
+      <li><%= link_to "#{wub.id}: #{wub.name}", wub_path(wub) %></li>
+    <% end %>
+  </ul>
+  <p>Or, <%= link_to 'make some more audiojizz', create_wub_path %>.</p>
+<% end %>
+
+<p>
+<%= link_to 'My instruments', my_instruments_path %>
+</p>
